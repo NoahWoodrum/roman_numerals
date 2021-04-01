@@ -9,7 +9,7 @@
 3. run romanNumerals.js in your preferred way (eg: Node, repl)
 
 ### Specification
-Converts numbers into Roman numerals. 
+Converts numbers into Roman numerals.
 Roman numerals are based on seven symbols:
 
 Symbol  Value
