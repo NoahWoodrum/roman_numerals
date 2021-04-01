@@ -29,22 +29,43 @@ Describe: romanNumerals()
   Code: romanNumerals(1)
   Expected Output: "I"
 
+  Test: If you call it with 2, it returns "II"
+  Code: romanNumerals(2)
+  Expected Output: "II"
+  
+  Test: If you call it with 3, it returns "III"
+  Code: romanNumerals(3)
+  Expected Output: "III"
+  
+  Test: If you call with 4, it returns "IV"
+  Code: romanNumerals(4)
+  Expected Output: "IV"
+  
+  Test: If you call with 5, it returns "V"
+  Code: romanNumerals(5)
+  Expected Output: "V"
+
+  Test: If you call with 6, it returns "VI"
+  Code: romanNumerals(6)
+  Expected Output: "VI"
+  
+  Test: If you call with 7, it returns "VII"
+  Code: romanNumerals(7)
+  Expected Output: "VII"
+  
+  Test: It call with 8, it returns "VIII"
+  Code: romanNumerals(8)
+  Expected Output: "VIII"
+  
+  Test: If you call it with 9, returns "IX"
+  Code: romanNumerals(9)
+  Expected Output: "IX"
+  
   Test: 
-  Code:
+  Code: romanNumerals
   Expected Output:
   
-
   Test: 
-  Code:
-  Expected Output:
-  
-
-  Test: 
-  Code:
-  Expected Output:
-  
-
-  Test: 
-  Code:
+  Code: romanNumerals
   Expected Output:
   
