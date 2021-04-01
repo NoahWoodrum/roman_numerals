@@ -22,3 +22,29 @@ D       500
 M       1,000
 
 ### Test Suite
+
+Describe: romanNumerals()
+
+  Test: If you call it with 1, it returns "I"
+  Code: romanNumerals(1)
+  Expected Output: "I"
+
+  Test: 
+  Code:
+  Expected Output:
+  
+
+  Test: 
+  Code:
+  Expected Output:
+  
+
+  Test: 
+  Code:
+  Expected Output:
+  
+
+  Test: 
+  Code:
+  Expected Output:
+  
