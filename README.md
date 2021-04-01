@@ -1,15 +1,19 @@
-
 ## Convert Arabic numerals into Roman numerals.
 ### A project by Tom and Noah
+---
+### Description
+This program takes as input a number and returns that number converted to Roman Numerals. 
 
-
+The maximum number accountable is 9'999.
+---
 ### Installation
 1. git clone this repo
 2. cd into the directory it creates
 3. run romanNumerals.js in your preferred way (eg: Node, repl)
-
+---
 ### Specification
 Converts numbers into Roman numerals.
+The maximum number accountable is 9'999.
 Roman numerals are based on seven symbols:
 
 Symbol  Value
@@ -20,7 +24,7 @@ L       50
 C       100
 D       500
 M       1,000
-
+---
 ### Test Suite
 
 Describe: romanNumerals()
@@ -64,8 +68,6 @@ Describe: romanNumerals()
   Test: If you call it with 10, it should return X
   Code: romanNumerals(10)
   Expected Output: "X"
-
-
 
   Test: 
   Code: romanNumerals

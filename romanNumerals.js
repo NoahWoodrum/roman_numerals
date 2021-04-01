@@ -1,5 +1,3 @@
-// in this function, we only handle the 1s digits
-// so the values of number are between 0-9
 function handleOnes(number) {
   if (number === 1) {
     return "I"
@@ -45,60 +43,82 @@ function handleTens(number) {
 }
 
 function handleHundreds(number) {
-  // ...
+  if (number === 1) {
+    return "C"
+  } else if (number === 2) {
+    return "CC"
+  } else if (number === 3) {
+    return "CCC"
+  } else if (number === 4) {
+    return "CD"
+  } else if (number === 5) {
+    return "D"
+  } else if (number === 6) {
+    return "DC"
+  } else if (number === 7) {
+    return "DCC"
+  } else if (number === 8) {
+    return "DCCC"
+  } else if (number === 9) {
+    return "CM"
+  }
 }
 
 function handleThousands(number) {
-  // ...
+  if (number === 1) {
+    return "M"
+  } else if (number === 2) {
+    return "MM"
+  } else if (number === 3) {
+    return "MMM"
+  } else if (number === 4) {
+    return "M𐆗"
+  } else if (number === 5) {
+    return "𐆗"
+  } else if (number === 6) {
+    return "𐆗M"
+  } else if (number === 7) {
+    return "𐆗MM"
+  } else if (number === 8) {
+    return "𐆗MMM"
+  } else if (number === 9) {
+    return "M𐆖"
+  }
 }
 
 function romanNumerals(number) {
-  // number we need to know how many digits
-  // 653
-  // hundreds = 6
-  // tens = 5
-  // ones = 3
-  // 653 / 100 = 6.53
-  // Math.floor(6.53) = 6
+  const thousands = Math.floor(number / 1000 % 100);
+  const hundreds = Math.floor(number / 100 % 10);
+  const tens = Math.floor(number / 10 % 10);
+  
+  const stringNumber = "" + number;
+  const ones = Number(stringNumber.slice(-1));
+  
+  // console.log("thousands: ", thousands)
+  // console.log("hundreds: ", hundreds)
+  // console.log("tens: ", tens)
+  // console.log("ones: ", ones)
+  
+  let thousandsInRoman = "";
+  if (thousands > 0) {
+    thousandsInRoman = handleThousands(thousands)
+  }
 
-  // 653 / 1000 = Math.floor(<0) = 0, how many thousands
-  // 653 / 100 = 6.53, Math.floor(6.53) = 6, how many hundreds
-  // 653 % 100 = 53 = how many tens, we want to round down to just 50
-  // 653 % 10 = 3 = how many ones
+  let hundredsInRoman = "";
+  if (number >= 100 && (Math.floor(number / 100) % 10) !== 0) {
+    hundredsInRoman = handleHundreds(hundreds)
+  }
 
-  // 25, >9, 20 + 5
-  // 25/10 = 2.5
-  // Math.floor(2.5) = 2 => tens value
-  // 25 % 10 = 5 => ones value
+  let tensInRoman = "";
+  if (number >= 10 && (Math.floor(number / 10) % 10) !== 0) {
+    tensInRoman = handleTens(tens);
+  }
 
-  let tens;
-  let ones;
 
-  let tensInRoman;
-  let onesInRoman;
+  let onesInRoman = "";
+  if ((number % 10) !== 0) {
+    onesInRoman = handleOnes(ones);
+  }
 
-  const decimalTens = number / 10;
-  tens = Math.floor(decimalTens);
-  // now handle the tens
-  tensInRoman = handleTens(tens);
-
-  ones = number % 10;
-  // now handle the ones
-  onesInRoman = handleOnes(ones);
-
-  console.log("ehhh")
-
-  return "I"
+  return thousandsInRoman + hundredsInRoman + tensInRoman + onesInRoman;
 }
-
-// 10  = X
-// 20  = XX
-// 30  = XXX
-// 40  = XL
-// 50  = L
-// 60  = LX
-// 70  = LXX
-// 80  = LXXX
-// 90  = XC
-// 100 = C
-
