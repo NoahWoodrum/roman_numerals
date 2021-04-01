@@ -87,36 +87,37 @@ function handleThousands(number) {
 }
 
 function romanNumerals(number) {
+  // alternate method:
+  // const numberString = ""+number;
+  // 556 => "556"
+  // const numberArray = numberString.split("")
+  // numberArray = ["5","5","6"]
+
   const thousands = Math.floor(number / 1000 % 100);
   const hundreds = Math.floor(number / 100 % 10);
   const tens = Math.floor(number / 10 % 10);
-  
+
   const stringNumber = "" + number;
   const ones = Number(stringNumber.slice(-1));
-  
-  // console.log("thousands: ", thousands)
-  // console.log("hundreds: ", hundreds)
-  // console.log("tens: ", tens)
-  // console.log("ones: ", ones)
-  
+
   let thousandsInRoman = "";
   if (thousands > 0) {
     thousandsInRoman = handleThousands(thousands)
   }
 
   let hundredsInRoman = "";
-  if (number >= 100 && (Math.floor(number / 100) % 10) !== 0) {
+  if (hundreds > 0) {
     hundredsInRoman = handleHundreds(hundreds)
   }
 
   let tensInRoman = "";
-  if (number >= 10 && (Math.floor(number / 10) % 10) !== 0) {
+  if (tens > 0) {
     tensInRoman = handleTens(tens);
   }
 
 
   let onesInRoman = "";
-  if ((number % 10) !== 0) {
+  if (ones > 0) {
     onesInRoman = handleOnes(ones);
   }
 
